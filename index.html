@@ -139,6 +139,32 @@
 
 	<section class="slide"><img src="pictures/fox-suspicious.jpg" class="cover w"></section>
 	<section class="slide">
+		<h2>Interactive, <em class="primary-accent">sync</em></h2>
+
+		<pre>
+			<code>function <strong class="primary-accent">getCompanyByUser</strong>(userId) {</code>
+			<code>  const <strong class="primary-accent">user</strong> = <mark>getUser</mark>(userId);</code>
+			<code>  const company = <mark>getCompany</mark>(<strong class="primary-accent">user</strong>.companyId);</code>
+			<code>&nbsp;</code>
+			<code>  return company;</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Interactive, <em class="secondary-accent">async</em></h2>
+
+		<pre>
+			<code><mark>async</mark> function <strong class="secondary-accent">getCompanyByUser</strong>(userId) {</code>
+			<code>  const <strong class="primary-accent">user</strong> = <mark>await</mark> getUser(userId);</code>
+			<code>  const company = <mark>await</mark> getCompany(<strong class="primary-accent">user</strong>.companyId);</code>
+			<code>&nbsp;</code>
+			<code>  return company;</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
 		<h2 class="shout code"><code><em class="primary-accent">a</em> => f(g(<em class="primary-accent">a</em>))</code></h2>
 	</section>
 
