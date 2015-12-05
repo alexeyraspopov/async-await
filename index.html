@@ -139,6 +139,58 @@
 
 	<section class="slide"><img src="pictures/fox-suspicious.jpg" class="cover w"></section>
 	<section class="slide">
+		<h2>Generator</h2>
+
+		<pre>
+			<code>function<mark class="next">*</mark> fib() {</code>
+
+			<div class="next">
+				<code>  let [a, b] = [1, 1];</code>
+				<code>&nbsp;</code>
+			</div>
+
+			<div class="next">
+				<code class="primary-accent">  while (true) {</code>
+				<code class="next">    <mark>yield</mark> a;</code>
+				<code class="next">    [a, b] = [b, a + b];</code>
+				<code>  }</code>
+				<code>}</code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Generators are cool!</h2>
+
+		<pre>
+			<code>function* fib(a = 1, b = 1) {</code>
+			<code>    yield a;</code>
+			<code>    <mark>yield*</mark> fib(b, a + b);</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>How to use it?</h2>
+
+		<pre>
+			<code>const <strong class="primary-accent">gen</strong> = fib();</code>
+			<code class="next">gen.next(); <mark class="comment">// { value: <mark>1</mark>, done: false }</mark></code>
+			<code class="next">gen.next(); <mark class="comment">// { value: <mark>1</mark>, done: false }</mark></code>
+			<code class="next">gen.next(); <mark class="comment">// { value: <mark>2</mark>, done: false }</mark></code>
+			<code class="next">gen.next(); <mark class="comment">// { value: <mark>3</mark>, done: false }</mark></code>
+			<code class="next">gen.next(); <mark class="comment">// { value: <mark>5</mark>, done: false }</mark></code>
+			<code class="next">gen.next(); <mark class="comment">// { value: <mark>8</mark>, done: false }</mark></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout code">
+			<code>npm i <span class="primary-accent">co</span></code>
+		</h2>
+	</section>
+
+	<section class="slide">
 		<h2>Interactive, <em class="primary-accent">sync</em></h2>
 
 		<pre>
