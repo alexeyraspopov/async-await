@@ -6,6 +6,12 @@
 .slide h2{
 	color: rgba(0, 0, 0, 0.87);
 }
+.slide strike{
+	opacity: 0.5;
+}
+.slide pre mark{
+	margin: 0;
+}
 .slide .shout{
 	font-weight: bold;
 	font-size: 80px;
@@ -34,14 +40,6 @@
 }
 .slide .mix-accent{
 	animation: fancy-light .5s infinite;
-}
-#disclaimer{
-	background: black;
-	color: white;
-	text-align: center;
-}
-#disclaimer h2{
-	color: red;
 }
 #lambda code{
 	color: #3f51b5;
