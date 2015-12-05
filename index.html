@@ -139,6 +139,34 @@
 
 	<section class="slide"><img src="pictures/fox-suspicious.jpg" class="cover w"></section>
 	<section class="slide">
+		<h2>Interactive, <em class="primary-accent">sync</em></h2>
+
+		<pre>
+			<code>function <strong class="primary-accent">getCompanyByUser</strong>(userId) {</code>
+			<code>  const <strong class="primary-accent">user</strong> = <mark>getUser</mark>(userId);</code>
+			<code>  const company = <mark>getCompany</mark>(<strong class="primary-accent">user</strong>.companyId);</code>
+			<code>&nbsp;</code>
+			<code>  return company;</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Interactive, <em class="secondary-accent">async</em></h2>
+
+		<pre>
+			<code>const <strong class="secondary-accent">getCompanyByUser</strong> = <mark>co.wrap(function* (userId)</mark> {</code>
+			<code>  const <strong class="primary-accent">user</strong> = <mark class="important">yield</mark> getUser(userId);</code>
+			<code>  const company = <mark class="important">yield</mark> getCompany(<strong class="primary-accent">user</strong>.companyId);</code>
+			<code>&nbsp;</code>
+			<code>  return company;</code>
+			<code>});</code>
+		</pre>
+
+		<p class="note">This code works in the newest browsers without any compilation steps.</p>
+	</section>
+
+	<section class="slide">
 		<h2 class="shout">Say <em class="primary-accent">no</em> to callbacks<em class="secondary-accent">!</em></h2>
 	</section>
 
